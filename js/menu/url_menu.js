@@ -1,1 +1,1 @@
-export const PRODUCT_API = "http://localhost:3001/products/";
+export const PRODUCT_API = "https://proyecto-integrador-backend.vercel.app//products/";

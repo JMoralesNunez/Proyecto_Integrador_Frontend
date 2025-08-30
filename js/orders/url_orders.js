@@ -1,4 +1,4 @@
-export const ORDERS_API = "http://localhost:3001/orders/";
-export const TABLES_API = "http://localhost:3001/rest_tables/";
+export const ORDERS_API = "https://proyecto-integrador-backend.vercel.app//orders/";
+export const TABLES_API = "https://proyecto-integrador-backend.vercel.app//rest_tables/";
 
 

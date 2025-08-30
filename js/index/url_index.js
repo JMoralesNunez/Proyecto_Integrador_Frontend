@@ -1,9 +1,9 @@
-export const NUMBER_API = "http://localhost:3001/orders/numberOrders";
+export const NUMBER_API = "https://proyecto-integrador-backend.vercel.app//orders/numberOrders";
 
-export const INCOME_API = "http://localhost:3001/orders/totalOrders";
+export const INCOME_API = "https://proyecto-integrador-backend.vercel.app//orders/totalOrders";
 
-export const RESERVATION_API = "http://localhost:3001/reservations/numberReservations";
+export const RESERVATION_API = "https://proyecto-integrador-backend.vercel.app//reservations/numberReservations";
 
-export const ORDERS_API = "http://localhost:3001/orders";
+export const ORDERS_API = "https://proyecto-integrador-backend.vercel.app//orders";
 
-export const RESERVATIONS_API = "http://localhost:3001/reservations";
+export const RESERVATIONS_API = "https://proyecto-integrador-backend.vercel.app//reservations";

@@ -1,3 +1,3 @@
-export const RESERVATIONS_API = "http://localhost:3001/reservations";
+export const RESERVATIONS_API = "https://proyecto-integrador-backend.vercel.app//reservations";
 
-export const CLIENTS_API = "http://localhost:3001/clients";
+export const CLIENTS_API = "https://proyecto-integrador-backend.vercel.app//clients";
