@@ -27,5 +27,5 @@ document.getElementById("createReservation").addEventListener("click", ()=>{
 
 document.getElementById("logoutBtn").addEventListener("click", ()=>{
     sessionStorage.clear()
-    window.location.href = "./pages/login.html"
+    window.location.href = "../pages/login.html"
 })
