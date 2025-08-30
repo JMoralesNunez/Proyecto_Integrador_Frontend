@@ -21,6 +21,6 @@ document.getElementById("saveMenuChanges").addEventListener("click", () => {
 
 document.getElementById("logoutBtn").addEventListener("click", ()=>{
     sessionStorage.clear()
-    window.location.href = "/frontend/pages/login.html"
+    window.location.href = "/pages/login.html"
     
 })
