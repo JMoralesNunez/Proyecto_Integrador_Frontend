@@ -11,7 +11,7 @@ export const orderHandlers = {
 
   async loadProducts() {
     try {
-      const res = await fetch("https://proyecto-integrador-backend.vercel.app//products");
+      const res = await fetch("https://proyecto-integrador-backend.vercel.app/products");
       const products = await res.json();
 
       const productSelect = document.getElementById("productSelect");
@@ -36,7 +36,7 @@ export const orderHandlers = {
 
   async loadTables() {
     try {
-      const res = await fetch("https://proyecto-integrador-backend.vercel.app//rest_tables");
+      const res = await fetch("https://proyecto-integrador-backend.vercel.app/rest_tables");
       const tables = await res.json();
 
       const tableSelect = document.getElementById("orderTable");
@@ -75,7 +75,7 @@ export const orderHandlers = {
 
     if (id_table !== null) {
       try {
-        const res = await fetch(`https://proyecto-integrador-backend.vercel.app//rest_tables/${id_table}`);
+        const res = await fetch(`https://proyecto-integrador-backend.vercel.app/rest_tables/${id_table}`);
         if (!res.ok) {
           Swal.fire({
             icon: "error",
@@ -106,7 +106,7 @@ export const orderHandlers = {
     }
 
     try {
-      const res = await fetch("https://proyecto-integrador-backend.vercel.app//orders", {
+      const res = await fetch("https://proyecto-integrador-backend.vercel.app/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status, id_table })
@@ -123,7 +123,7 @@ export const orderHandlers = {
       document.getElementById("productsSection").style.display = "block";
 
       if (id_table !== null) {
-        await fetch(`https://proyecto-integrador-backend.vercel.app//rest_tables/${id_table}/occupy`, { method: "PUT" });
+        await fetch(`https://proyecto-integrador-backend.vercel.app/rest_tables/${id_table}/occupy`, { method: "PUT" });
       }
     } catch (error) {
       console.error("Error al crear orden:", error);
@@ -183,7 +183,7 @@ export const orderHandlers = {
   async saveOrder() {
     try {
       for (let item of tempItems) {
-        await fetch("https://proyecto-integrador-backend.vercel.app//order_items", {
+        await fetch("https://proyecto-integrador-backend.vercel.app/order_items", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -194,7 +194,7 @@ export const orderHandlers = {
         });
       }
 
-      await fetch(`https://proyecto-integrador-backend.vercel.app//orders/${currentOrderId}`, {
+      await fetch(`https://proyecto-integrador-backend.vercel.app/orders/${currentOrderId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ total_price: totalOrder })
@@ -226,17 +226,17 @@ export const orderHandlers = {
     if (!currentOrderId) return;
 
     try {
-      const res = await fetch(`https://proyecto-integrador-backend.vercel.app//orders/${currentOrderId}`);
+      const res = await fetch(`https://proyecto-integrador-backend.vercel.app/orders/${currentOrderId}`);
       if (!res.ok) {
         throw new Error("No se pudo obtener la orden.");
       }
       const order = await res.json();
       const id_table = order.id_table;
 
-      await fetch(`https://proyecto-integrador-backend.vercel.app//orders/${currentOrderId}`, { method: "DELETE" });
+      await fetch(`https://proyecto-integrador-backend.vercel.app/orders/${currentOrderId}`, { method: "DELETE" });
 
       if (id_table) {
-        await fetch(`https://proyecto-integrador-backend.vercel.app//rest_tables/${id_table}/free`, { method: "PUT" });
+        await fetch(`https://proyecto-integrador-backend.vercel.app/rest_tables/${id_table}/free`, { method: "PUT" });
       }
       Swal.fire({
         icon: "error",

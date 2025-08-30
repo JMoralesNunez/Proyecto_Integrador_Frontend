@@ -1,1 +1,1 @@
-export const PRODUCT_API = "https://proyecto-integrador-backend.vercel.app//products/";
+export const PRODUCT_API = "https://proyecto-integrador-backend.vercel.app/products/";

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value;
         
         try {
-            const response = await fetch("https://proyecto-integrador-backend.vercel.app//login"); 
+            const response = await fetch("https://proyecto-integrador-backend.vercel.app/login"); 
             const admins = await response.json();
 
             const user = admins.find(

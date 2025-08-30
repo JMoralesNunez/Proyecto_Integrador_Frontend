@@ -126,7 +126,7 @@ export const reservationLoaders = {
   },
   async loadTables() {
     try {
-      const res = await fetch("https://proyecto-integrador-backend.vercel.app//rest_tables");
+      const res = await fetch("https://proyecto-integrador-backend.vercel.app/rest_tables");
       const tables = await res.json();
 
       const tableSelect = document.getElementById("orderTable");
